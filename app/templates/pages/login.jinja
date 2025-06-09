@@ -1,0 +1,68 @@
+{#=====================================================
+Login  page
+  - Form for adding a new user
+=====================================================#}
+
+{% extends 'pages/base.jinja' %}
+
+
+{% block title %}
+
+    Flask Demo - Login
+
+{% endblock %}
+
+
+{% block content %}
+
+    <article>
+
+        <ul>
+            {% for thing in things %}
+
+                <li>
+                    <a href="/thing/{{ thing.id }}">
+                        {{ thing.name }}
+                    </a>
+                </li>
+
+            {% else %}
+
+                <p>None!</p>
+
+            {% endfor %}
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>Sign Up</h3>
+
+        <form action="/login-user" method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Your username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Your password"
+                required
+            >
+
+
+
+            <button>Login</button>
+
+        </form>
+
+    </article>
+
+{% endblock %}
+
